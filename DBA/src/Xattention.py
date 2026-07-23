@@ -65,6 +65,7 @@ def xattn_estimate(
 
     if use_triton and (
         "100" not in torch.cuda.get_device_properties(torch.cuda.current_device()).name
+        and "H20" not in torch.cuda.get_device_properties(torch.cuda.current_device()).name
     ):
         use_triton = False
         print(

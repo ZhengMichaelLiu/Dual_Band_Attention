@@ -20,11 +20,11 @@ csr_mem_usage_data = {
 plt.rcParams.update({
     "font.family": "serif",
     "font.serif": ["Times", "Times New Roman", "serif"],
-    "axes.labelsize": 20,
-    "axes.titlesize": 20,
-    "xtick.labelsize": 18,
-    "ytick.labelsize": 18,
-    "legend.fontsize": 16,
+    "axes.labelsize": 26,
+    "axes.titlesize": 26,
+    "xtick.labelsize": 22,
+    "ytick.labelsize": 22,
+    "legend.fontsize": 20,
     "figure.dpi": 300,
     "pdf.fonttype": 42,
     "ps.fonttype": 42
@@ -48,7 +48,7 @@ def plot_memory_comparison():
     # Label Naive Mask values
     for i, val in enumerate(naive_vals):
         ax.annotate(f"{int(val)}", (x[i], val), textcoords="offset points",
-                    xytext=(0, 8), ha='center', va='bottom', fontsize=14,
+                    xytext=(0, 8), ha='center', va='bottom', fontsize=18,
                     color='#d62728', fontweight='bold', zorder=5)
 
     # color palette for CSR
@@ -70,7 +70,7 @@ def plot_memory_comparison():
         if sparsity == 0.9:
             for i, val in enumerate(csr_vals):
                 ax.annotate(f"{val:.2f}", (x[i], val), textcoords="offset points",
-                            xytext=(0, 18), ha='center', va='top', fontsize=14,
+                            xytext=(0, 18), ha='center', va='top', fontsize=18,
                             color=colors[idx], fontweight='bold', zorder=5)
 
     ax.set_ylabel('Memory Usage (MB)', fontweight='bold')

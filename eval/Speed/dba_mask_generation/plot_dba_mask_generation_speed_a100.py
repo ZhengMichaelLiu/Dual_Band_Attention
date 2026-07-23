@@ -25,11 +25,11 @@ speed_up_over_tri_non_causal = {
 plt.rcParams.update({
     "font.family": "serif",
     "font.serif": ["Times", "Times New Roman", "serif"],
-    "axes.labelsize": 20,
-    "axes.titlesize": 20,
-    "xtick.labelsize": 18,
-    "ytick.labelsize": 18,
-    "legend.fontsize": 16,
+    "axes.labelsize": 26,
+    "axes.titlesize": 26,
+    "xtick.labelsize": 22,
+    "ytick.labelsize": 22,
+    "legend.fontsize": 20,
     "figure.dpi": 300,
     "pdf.fonttype": 42,
     "ps.fonttype": 42
@@ -76,7 +76,7 @@ def plot_combined_speedup():
 
         # Add titles inside plot at top-right
         ax.text(0.96, 0.96, title_str, transform=ax.transAxes, fontweight='bold',
-                fontsize=18, va='top', ha='right',
+                fontsize=24, va='top', ha='right',
                 bbox=dict(boxstyle='round,pad=0.2', facecolor='white', alpha=0.8, edgecolor='none'))
 
         # Give a little bit of breathing room at the top
@@ -91,7 +91,7 @@ def plot_combined_speedup():
     # Adding a single legend centrally
     lines, labels = axes[0].get_legend_handles_labels()
     fig.legend(lines, labels, loc='lower center', bbox_to_anchor=(0.5, 1.02),
-               ncol=4, fontsize=14, frameon=True, columnspacing=0.8, handletextpad=0.4)
+               ncol=4, fontsize=20, frameon=True, columnspacing=0.8, handletextpad=0.4)
 
     plt.tight_layout(w_pad=2.0)
     plot_filename = 'combined_mask_speedup_a100.pdf'

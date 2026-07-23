@@ -19,12 +19,12 @@ lengths = ["4K", "8K", "16K", "32K", "64K", "128K"]
 
 # Speed up data extracted from the table
 speedup_data = {
-    "MInference": [0.42, 0.61, 0.83, 1.18, 1.77, 3.08],
-    "FlexPrefill": [0.89, 0.96, 1.12, 1.38, 1.82, 2.59],
-    "XAttn 8": [0.98, 1.06, 1.18, 1.38, 1.85, 2.50],
-    "XAttn 16": [0.98, 1.06, 1.19, 1.40, 1.85, 2.53],
-    "DBA 8": [1.02, 1.09, 1.22, 1.44, 1.88, 2.49],
-    "DBA 16": [1.02, 1.10, 1.23, 1.47, 1.93, 2.58]
+    "MInference": [0.40, 0.56, 0.73, 0.96, 1.34, 2.20],
+    "FlexPrefill": [0.85, 0.88, 0.98, 1.13, 1.41, 1.82],
+    "XAttn 8": [0.94, 0.96, 1.03, 1.13, 1.41, 1.77],
+    "XAttn 16": [0.94, 0.98, 1.04, 1.15, 1.41, 1.79],
+    "DBA 8": [0.97, 1.01, 1.07, 1.18, 1.42, 1.75],
+    "DBA 16": [0.97, 1.01, 1.08, 1.20, 1.45, 1.82]
 }
 
 def plot_whole_model_speedup():
@@ -33,6 +33,7 @@ def plot_whole_model_speedup():
     x = np.arange(len(lengths))
 
     methods = ["MInference", "FlexPrefill", "XAttn 8", "XAttn 16", "DBA 8", "DBA 16"]
+    # methods = ["FlexPrefill", "XAttn 8", "XAttn 16", "DBA 8", "DBA 16"]
     colors = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', '#8c564b']
     markers = ['o', 's', '^', 'v', 'D', 'P']
     linestyles = ['-', '--', '-.', ':', '-', '--']

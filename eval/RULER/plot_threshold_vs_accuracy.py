@@ -15,11 +15,11 @@ import matplotlib.pyplot as plt
 plt.rcParams.update({
     "font.family": "serif",
     "font.serif": ["Times", "Times New Roman", "serif"],
-    "axes.labelsize": 20,
-    "axes.titlesize": 20,
-    "xtick.labelsize": 18,
-    "ytick.labelsize": 18,
-    "legend.fontsize": 16,
+    "axes.labelsize": 26,
+    "axes.titlesize": 26,
+    "xtick.labelsize": 22,
+    "ytick.labelsize": 22,
+    "legend.fontsize": 20,
     "figure.dpi": 300,
     "pdf.fonttype": 42,
     "ps.fonttype": 42
@@ -39,7 +39,7 @@ mtp_x = mtp_data["mean_threshold"]
 mtp_acc = mtp_data["accuracy"]
 mtp_speed = mtp_data["speed"]
 
-fig, ax1 = plt.subplots(figsize=(8, 6))
+fig, ax1 = plt.subplots(figsize=(9, 5))
 
 color1 = '#1f77b4' # Academic blue
 ax1.set_xlabel('Threshold', fontweight='bold')
@@ -55,15 +55,15 @@ ax1.grid(True, linestyle='--', alpha=0.7, color='gray')
 # Annotate ax1 (Accuracy) values
 for i, val in enumerate(accuracies):
     ax1.annotate(f"{val:.1f}", (thresholds[i], val), textcoords="offset points",
-                 xytext=(0, 8), ha='center', va='bottom', fontsize=12,
+                 xytext=(0, 8), ha='center', va='bottom', fontsize=16,
                  color=color1, fontweight='bold', zorder=5)
 ax1.annotate(f"{mtp_acc:.1f}", (mtp_x, mtp_acc), textcoords="offset points",
-             xytext=(0, 12), ha='center', va='bottom', fontsize=12,
+             xytext=(0, 12), ha='center', va='bottom', fontsize=16,
              color=color1, fontweight='bold', zorder=5)
 
 ax2 = ax1.twinx()
 color2 = '#d62728' # Academic red
-ax2.set_ylabel('Speed (s)', color=color2, fontweight='bold')
+ax2.set_ylabel('Latency (s)', color=color2, fontweight='bold')
 ax2.plot(thresholds, speeds, marker='X', color=color2, linestyle='--', label='Speed', markersize=9, linewidth=2.5, zorder=3)
 ax2.scatter(mtp_x, mtp_speed, color=color2, marker='*', s=350, label='MTP Speed', zorder=5)
 ax2.tick_params(axis='y', labelcolor=color2)
@@ -83,10 +83,10 @@ ax2.set_ylim(bottom=min(speeds) - spd_range * pad_ratio_bottom,
 # Annotate ax2 (Speed) values
 for i, val in enumerate(speeds):
     ax2.annotate(f"{int(val)}", (thresholds[i], val), textcoords="offset points",
-                 xytext=(0, -18), ha='center', va='top', fontsize=12,
+                 xytext=(0, -18), ha='center', va='top', fontsize=16,
                  color=color2, fontweight='bold', zorder=5)
 ax2.annotate(f"{int(mtp_speed)}", (mtp_x, mtp_speed), textcoords="offset points",
-             xytext=(0, 18), ha='center', va='bottom', fontsize=12,
+             xytext=(0, 18), ha='center', va='bottom', fontsize=16,
              color=color2, fontweight='bold', zorder=5)
 
 # Combine legends
