@@ -64,8 +64,8 @@ ax1.annotate(f"{mtp_acc:.1f}", (mtp_x, mtp_acc), textcoords="offset points",
 ax2 = ax1.twinx()
 color2 = '#d62728' # Academic red
 ax2.set_ylabel('Latency (s)', color=color2, fontweight='bold')
-ax2.plot(thresholds, speeds, marker='X', color=color2, linestyle='--', label='Speed', markersize=9, linewidth=2.5, zorder=3)
-ax2.scatter(mtp_x, mtp_speed, color=color2, marker='*', s=350, label='MTP Speed', zorder=5)
+ax2.plot(thresholds, speeds, marker='X', color=color2, linestyle='--', label='Latency', markersize=9, linewidth=2.5, zorder=3)
+ax2.scatter(mtp_x, mtp_speed, color=color2, marker='*', s=350, label='MTP Latency', zorder=5)
 ax2.tick_params(axis='y', labelcolor=color2)
 
 # Expand limits proportionally to prevent annotations from hitting the edges and keep lines aligned
