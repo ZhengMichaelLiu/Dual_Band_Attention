@@ -1,0 +1,2 @@
+num_heads,avg_fp_per_head,avg_fn_per_head,avg_precision(%),xattn_avg_fp_per_head,xattn_avg_fn_per_head,xattn_avg_precision(%)
+1024,2.6943359375,2.6943359375,98.98010911300462,4.203125,4.203125,98.42737920524979

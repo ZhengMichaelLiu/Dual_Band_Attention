@@ -1,0 +1,2 @@
+For DBA on the whole model of 1024 heads, on average, the false positive is 2.6943, the false negative is 2.6943, the precision is 98.9801%.
+For XAttention on the whole model of 1024 heads, on average, the false positive is 4.2031, the false negative is 4.2031, the precision is 98.4274%.
